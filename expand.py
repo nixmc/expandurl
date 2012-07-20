@@ -4,9 +4,12 @@ import json
 import requests
 import csv
 
-data_file = 'data.json'
-if len(sys.argv) > 1:
+data_file = ''
+if len(sys.argv) == 2:
     data_file = sys.argv[1]
+else:
+    print "Usage: expand.py [data_file.json]\n"
+    sys.exit()
 
 try:
     inputf = open(data_file, 'r')
